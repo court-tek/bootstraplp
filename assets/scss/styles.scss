@@ -221,8 +221,9 @@ img {
   background-color: var(--grisbg);
   margin-bottom: 2rem;
   .standard-banner__text-area {
-    // padding: 45px 45px;
+    padding: 45px 45px;
     .standard-banner__container {
+      padding: 0 0;
       h2 {
         font-size:  1.875em;
         text-transform: uppercase;
@@ -241,6 +242,22 @@ img {
         // padding: 0 8em;
       }
     }
+    .bd-grid {
+      .btn-clarksgold {
+        --bs-btn-padding-x: 30px;
+        --bs-btn-padding-y: 8px;
+        --bs-btn-font-weight: 600;
+      }
+    }
+  }
+
+  @media (max-width: 45em) {
+    .standard-banner__text-area {
+      padding: 45px 0;
+    }
+    .standard-banner__container {
+      padding: 0 20px !important;
+    }
   }
 }
 // standard-banner summer promo one
@@ -249,7 +266,7 @@ img {
 #promo-summer-two {
   background-color: var(--cyan);
   .standard-banner__text-area {
-    // padding: 45px 45px;
+    padding: 45px 45px;
     .standard-banner__container {
       .heading {
         font-size: 2.75em;
@@ -284,17 +301,16 @@ img {
         font-size: clamp(.3em, calc(1vw + 1em), 1.4em);
       }
     }
-    .d-grid {
-      .btn-blanco {
-        --bs-btn-border-color: var(--negro);
-      }
-    }
-    
     .line-five {
       font-size: .8em;
       color: hsl(0, 0%, 0%);
       a {
         color: hsl(0, 0%, 0%);
+      }
+    }
+    .d-grid {
+      .btn-blanco {
+        --bs-btn-border-color: var(--negro);
       }
     }
   }
