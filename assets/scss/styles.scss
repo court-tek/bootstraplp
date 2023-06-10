@@ -1,0 +1,393 @@
+// Styles.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$custom-colors: (
+  "clarksgold": hsl(39, 97%, 65%)
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
+@import "mixins/reset";
+@import "mixins/variables";
+
+
+
+
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+  
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.headings {}
+
+.banner-margin-r {
+  margin: 0 1.8em 0 0;
+}
+.tag-margin-b {
+  margin: 0 1.5em;
+}
+
+.split {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  flex-wrap: wrap;
+  & > * {
+    flex-basis: 30%;
+    min-width: 15em;
+  }
+}
+// .break {
+//   flex-basis: 100%;
+//   height: 0;
+// }
+.spacing>*+* {
+  margin-top: var(--spacer, 1.5rem);
+}
+
+.btn {
+  letter-spacing: 1.5px; 
+  font-size: .9em;
+  text-transform: capitalize;
+}
+  
+// .btn:hover,
+// .btn:focus {
+//   transform: scale(1.1);
+//   opacity: .9;
+// }
+
+// top banner 
+.skinny-promo-banner {
+  padding: .4rem 0;
+  background-color: var(--clr-accent, #6BE3E3);
+  
+  .skinny-banner {
+    text-decoration: none;
+
+    .skinny-banner__content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__para {
+      align-self: center;
+    }
+
+    &__top-promo-banner {
+      color: #000;
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    &__percentoff {
+      color: #000;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-size: clamp(.1em, calc(1vw + 1em), 1.8em);
+    }
+
+    &__promocode {
+      color: #000;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: .2em;
+    }
+  }  
+}
+// top monthly promo banner
+
+// sign in/up banner / nav bar bottom
+.new-header {
+  &__top {
+    background-color: var(--clr-accent, #F3F3F3);
+    padding: .3em 0;
+  }
+
+  svg {
+    color: #000;
+    font-weight: 100;
+  }
+
+  &__link {
+    color: #000;
+    display: flex;
+    font-weight: 100;
+    text-transform: capitalize;
+    font-size: .9em;
+  }
+
+  .nav-bottom {
+    border-bottom: 1px solid #CCCCCC;
+    padding: .8em 0;
+  }
+
+  &__clarks-logo {
+    width: 80px;
+    height: 25px;
+  }
+
+  &__left-nav {
+    display: flex;
+  }
+    .nav-container {}
+    
+    ul {
+      li {
+        display: inline-block;
+        .cart-anchor {
+          position: relative;
+          padding: 7px 0 0 0;
+          .cart-amount {
+            position: absolute;
+            font-size: .8em;
+            color: #000;
+            top: 18px;
+            left: 10.5px;
+          }
+      }
+    }
+  }
+  @media (max-width: 45em) {
+    .register, .store {
+      display: none;
+    }
+  }
+}
+// sign in/up banner / nav bar bottom
+
+// service proposition
+.service-proposition-banner {
+  background-color: var(--clr-accent, #DCDCDC);
+  padding: 1em 0;
+  margin-bottom: .6em;
+  .service-proposition {
+    &__content {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__para {
+      display: flex;
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: clamp(.3em, calc(1vw + .4em), .8em);
+
+      a {
+        text-decoration: underline;
+        margin-right: .4em;
+      }
+    }
+  }
+
+  @media (max-width: 45em) {
+    .top-p {
+      margin-bottom: .3rem;
+    }
+  }
+}
+// service proposition
+
+#promo-summer__img {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+// standard-banner summer promo
+#promo-summer {
+  padding-top: 0;
+  .standard-banner__text-area {
+    background-color: var(--clr-accent, #F3F3F3);
+    padding: 45px;
+    .standard-banner__container {
+      h2 {
+        font-size:  1.875em;
+        text-transform: uppercase;
+        font-weight: 600;
+        line-height: 1em;
+      }
+
+      .line-one {
+        text-transform: uppercase;
+        font-size: .9em;
+      }
+
+      .line-two {
+        font-size: .9em;
+        line-height: 1.4;
+        padding: 0 4rem;
+      }
+    }
+  }
+}
+// standard-banner
+
+  .primary-title {
+    font-size: 4rem;
+    font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  
+  .section-title {
+    text-align: center;
+    font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+    line-height: 1;
+    color: #17353d;
+    margin-bottom: 5rem;
+
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 15em 0;
+    background: yellow;
+
+    @supports (background-blend-mode: multiply) {
+        background: url("https://raw.githubusercontent.com/court-tek/woolandingpage/93d7d8901945c83e45ce7d8e119a33b090a6f0a1/img/shoe-3.png"),
+        radial-gradient(#444, #111);
+        background-blend-mode: multiply;
+    }
+  }
+
+  .featured {
+    background-color: #eee;
+    &__item {
+      display: block;
+      position: relative;
+      transform: scale(.85);
+      transition: transform 250ms ease-in-out;
+      text-decoration: none;
+      color: #333;
+      text-align: center;
+      line-height: 1.2;
+
+      &:hover, &:focus {
+        transform: scale(1);
+
+        .featured__details {
+          opacity: 1;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        padding: 75% 75% 0 0;
+        border-radius: 50%;
+        background-color: #243A3E;
+        z-index: -1;
+      }
+    }
+
+    &__details {
+      opacity: 0;
+      transition: opacity 250ms linear;
+      span {
+        display: block;
+        font-weight: 700;
+        font-size: 2.5rem;
+      }
+    }
+  }
+  
+  .product {
+    background: radial-gradient(var(--clr-inner, #777834), var(--clr-outer, #412E27));
+    padding: 3em;
+    border-radius: 1em;    
+    margin-bottom: 6em;
+    text-align: center;
+
+    &__title {
+      font-size: 3rem;
+      line-height: 1.1;
+      color: #fff;
+      text-shadow: 0 0 .2rem rgba(#000, .2);
+    }
+
+    &__image {
+      margin: -5em 0 0 0;
+    }
+
+    @media (min-width: 45em) {
+      text-align: left;
+      margin-bottom: 9em;
+
+      &__image {
+        float: right;
+        width: 65%;
+        shape-outside: url('https://raw.githubusercontent.com/court-tek/woolandingpage/main/img/shoe-1.png');
+        shape-margin: 2em;
+        margin: 0 0 0 -5em;
+      }
+
+      &.boot-left {
+        text-align: right;
+        .product__image {
+          float: left;
+        // width: 65%;
+        shape-outside: url('https://raw.githubusercontent.com/court-tek/woolandingpage/main/img/shoe-2.png');
+        shape-margin: 1em;
+        margin: 0 -5em 0 0;
+        }
+      }
+    }
+  }
+
+  .cyan-bg {
+    --clr-accent: hsl(180, 68%, 65%);
+  }
+  .btn__atl {
+    --clr-accent: hsl(39, 97%, 65%);
+  }
+  .btn__sandals {
+    --clr-accent: hsl(101, 98%, 76%);
+  }
+  .btn__dress-shoes {
+    --clr-accent: hsl(36, 33%, 81%);
+  }
+  .sale__bg {
+    --clr-accent: hsl(283, 97%, 66%);
+  }
+  .klarna {
+    --clr-accent: hsl(344, 92%, 85%);
+  }
+
+
+  @media only screen and (max-width: 960px) {
+    .container {}
+  }
+  /* Phones */
+  @media only screen and (max-width: 767px) {
+    header .header-menu {
+      display: none;
+    }
+    header .menu-btn {
+      display: flex;
+    }
+    header .logo {
+      font-size: 1.3rem;
+    }
+    .mobile-menu {
+      display: flex;
+    }
+  }
