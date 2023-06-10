@@ -6,7 +6,8 @@
 @import "../../node_modules/bootstrap/scss/variables";
 
 $custom-colors: (
-  "clarksgold": hsl(39, 97%, 65%)
+  "clarksgold": hsl(39, 97%, 65%),
+  "blanco": hsl(0, 0, 100%),
 );
 
 $theme-colors: map-merge($theme-colors, $custom-colors);
@@ -19,8 +20,17 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 @import "mixins/reset";
 @import "mixins/variables";
 
-
-
+:root {
+  --clarksgold: hsl(39, 97%, 65%);
+  --grisbg: hsl(0, 0%, 95%);
+  --cyan: hsl(180, 68%, 65%);
+  --limebg: hsl(101, 98%, 76%);
+  --nose: hsl(36, 33%, 81%);
+  --fusha: hsl(283, 97%, 66%);
+  --rosada-custom: hsl(344, 92%, 85%);
+  --blanco: hsl(0, 0%, 100%);
+  --negro: hsl(0, 0%, 0%);
+}
 
 body {
   font-family: 'Noto Sans', sans-serif;
@@ -31,8 +41,6 @@ img {
   height: auto;
   display: block;
 }
-
-.headings {}
 
 .banner-margin-r {
   margin: 0 1.8em 0 0;
@@ -51,10 +59,7 @@ img {
     min-width: 15em;
   }
 }
-// .break {
-//   flex-basis: 100%;
-//   height: 0;
-// }
+
 .spacing>*+* {
   margin-top: var(--spacer, 1.5rem);
 }
@@ -63,6 +68,7 @@ img {
   letter-spacing: 1.5px; 
   font-size: .9em;
   text-transform: capitalize;
+  --bs-btn-border-radius: 2.4px;
 }
   
 // .btn:hover,
@@ -210,12 +216,12 @@ img {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-// standard-banner summer promo
-#promo-summer {
-  padding-top: 0;
+// standard-banner summer promo one
+#promo-summer-one {
+  background-color: var(--grisbg);
+  margin-bottom: 2rem;
   .standard-banner__text-area {
-    background-color: var(--clr-accent, #F3F3F3);
-    padding: 45px;
+    // padding: 45px 45px;
     .standard-banner__container {
       h2 {
         font-size:  1.875em;
@@ -232,12 +238,81 @@ img {
       .line-two {
         font-size: .9em;
         line-height: 1.4;
-        padding: 0 4rem;
+        // padding: 0 8em;
       }
     }
   }
 }
-// standard-banner
+// standard-banner summer promo one
+
+// standard-banner summer promo two
+#promo-summer-two {
+  background-color: var(--cyan);
+  .standard-banner__text-area {
+    // padding: 45px 45px;
+    .standard-banner__container {
+      .heading {
+        font-size: 2.75em;
+        font-size: clamp(1.9em, calc(2vw + 1em), 2.75em);
+        text-transform: uppercase;
+        font-weight: 800;
+        padding: 0 0 .5em 0;
+      }
+      
+      .discount-banner {
+        background-color: var(--fusha);
+        font-size: clamp(2.8em, calc(2vw + 1em), 4.6em);
+        color: var(--blanco);
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        width: 50%;
+        padding: 6px;
+        margin: 0 auto;
+      }
+
+      .line-three {
+        text-transform: uppercase;
+        font-size: 1.5em;
+        font-size: clamp(.3em, calc(1vw + .9em), 1.5em);
+        font-weight: 800;
+      }
+      
+      .line-four {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: clamp(.3em, calc(1vw + 1em), 1.4em);
+      }
+    }
+    .d-grid {
+      .btn-blanco {
+        --bs-btn-border-color: var(--negro);
+      }
+    }
+    
+    .line-five {
+      font-size: .8em;
+      color: hsl(0, 0%, 0%);
+      a {
+        color: hsl(0, 0%, 0%);
+      }
+    }
+  }
+
+  @media (max-width: 45em) {
+    .standard-banner__text-area {
+      padding: 45px 0;
+    }
+
+    .discount-banner {
+      width: 100% !important;
+      padding: 1px !important;
+    }
+  }
+}
+// standard-banner summer promo two
+
+
 
   .primary-title {
     font-size: 4rem;
